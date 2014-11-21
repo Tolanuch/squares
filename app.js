@@ -25,12 +25,13 @@
             this.indexRow=indRow;
             this.indexColumn=indCol;
         };
-        this.removeRow=function($scope){
+        this.removeRow=function(){
             this.rows.splice(this.indexRow,1);
         };
-        this.removeColumn=function($scope){
+        this.removeColumn=function(){
             for (var i=0;i<this.rows.length;i++)
                 this.rows[i].splice(this.indexColumn,1);
+
         };
     });
 })();
