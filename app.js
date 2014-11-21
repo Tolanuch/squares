@@ -31,7 +31,14 @@
         this.removeColumn=function(){
             for (var i=0;i<this.rows.length;i++)
                 this.rows[i].splice(this.indexColumn,1);
-
+        };
+        this.hideColumnRemoveButton=function() {
+            if ((this.rows[0].length == 1) || (this.rows[0].length == this.indexColumn))
+                return true;
+        };
+        this.hideRowRemoveButton=function(){
+            if ((this.rows.length==1) || (this.rows.length==this.indexRow))
+                return true;
         };
     });
 })();
