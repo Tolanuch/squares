@@ -10,7 +10,6 @@
   <table class="field__container">
 	<tr class="field__container-row"
       ng-repeat="row in containerCtrl.rows">
-      <!--ng-init="indexRow=$index"-->
 	  <td class="field__container-cell"
       ng-repeat="cell in row"
       ng-mouseover="containerCtrl.cellMouseOver($event,$parent.$index,$index)">
@@ -27,12 +26,12 @@
   </div>
   <div class="field__buttons field__button-remove field__button-remove-column"
        ng-click="containerCtrl.removeColumn()"
-       ng-class="{'field__hidden':containerCtrl.rows[0].length==1 || containerCtrl.rows[0].length==containerCtrl.indexColumn}">
+       ng-class="{'field__hidden':containerCtrl.hideColumnRemoveButton()}">
     <i class="fa fa-minus"></i>
   </div>
   <div class="field__buttons field__button-remove field__button-remove-row"
        ng-click="containerCtrl.removeRow()"
-       ng-class="{'field__hidden':containerCtrl.rows.length==1 || containerCtrl.rows.length==containerCtrl.indexRow}">
+       ng-class="{'field__hidden':containerCtrl.hideRowRemoveButton()}">
     <i class="fa fa-minus"></i>
   </div>
 </div>
