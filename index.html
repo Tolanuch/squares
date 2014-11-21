@@ -9,11 +9,11 @@
 <div class="field">
   <table class="field__container">
 	<tr class="field__container-row"
-      ng-repeat="row in containerCtrl.rows"
-      ng-init="indexRow=$index">
+      ng-repeat="row in containerCtrl.rows">
+      <!--ng-init="indexRow=$index"-->
 	  <td class="field__container-cell"
       ng-repeat="cell in row"
-      ng-mouseover="containerCtrl.cellMouseOver($event,indexRow,$index)">
+      ng-mouseover="containerCtrl.cellMouseOver($event,$parent.$index,$index)">
       </td>
 	</tr>
   </table>

@@ -9,7 +9,6 @@
         ];
         this.indexColumn=0;
         this.indexRow=0;
-        this.len=0;
         var columnButton=document.querySelector('.field__button-remove-column');
         var rowButton=document.querySelector('.field__button-remove-row');
 
@@ -26,10 +25,10 @@
             this.indexRow=indRow;
             this.indexColumn=indCol;
         };
-        this.removeRow=function(){
+        this.removeRow=function($scope){
             this.rows.splice(this.indexRow,1);
         };
-        this.removeColumn=function(){
+        this.removeColumn=function($scope){
             for (var i=0;i<this.rows.length;i++)
                 this.rows[i].splice(this.indexColumn,1);
         };
