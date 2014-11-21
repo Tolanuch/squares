@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="squares">
+<meta charset="utf-8">
+<title> Квадрати </title>
+
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css"/>
+<body ng-controller="containerController as containerCtrl">
+<div class="field">
+  <table class="field__container">
+	<tr class="field__container-row"
+      ng-repeat="row in containerCtrl.rows"
+      ng-init="indexRow=$index">
+	  <td class="field__container-cell"
+      ng-repeat="cell in row"
+      ng-mouseover="containerCtrl.cellMouseOver($event,indexRow,$index)">
+      </td>
+	</tr>
+  </table>
+  <div class="field__buttons field__button-add field__button-add-column"
+       ng-click="containerCtrl.addColumn()">
+    <i class="fa fa-plus"></i>
+  </div>
+  <div class="field__buttons field__button-add field__button-add-row"
+       ng-click="containerCtrl.addRow()">
+    <i class="fa fa-plus"></i>
+  </div>
+  <div class="field__buttons field__button-remove field__button-remove-column"
+       ng-click="containerCtrl.removeColumn()"
+       ng-class="{'field__hidden':containerCtrl.rows[0].length==1 || containerCtrl.rows[0].length==containerCtrl.indexColumn}">
+    <i class="fa fa-minus"></i>
+  </div>
+  <div class="field__buttons field__button-remove field__button-remove-row"
+       ng-click="containerCtrl.removeRow()"
+       ng-class="{'field__hidden':containerCtrl.rows.length==1 || containerCtrl.rows.length==containerCtrl.indexRow}">
+    <i class="fa fa-minus"></i>
+  </div>
+</div>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

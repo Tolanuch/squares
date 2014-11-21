@@ -1,0 +1,14 @@
+{
+  "name": "squares",
+  "version": "0.0.5",
+  "authors": [
+    "Tolanuch <tolanuch@gmail.com>"
+  ],
+  "description": "test project with libraries and packages",
+  "main": "index.jade",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.3.2",
+    "fontawesome": "~4.2.0"
+  }
+}
